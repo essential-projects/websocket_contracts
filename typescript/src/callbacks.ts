@@ -1,3 +1,4 @@
+import { IIdentity } from '@essential-projects/iam_contracts';
 import { ISocketClient } from './isocket_client';
 
 /**
@@ -7,7 +8,7 @@ import { ISocketClient } from './isocket_client';
  * @param  {ISocketClient} clientSocket The socket instance to communicate
  *                                      with the connected socket endpoint.
  */
-export type OnConnectCallback = (clientSocket: ISocketClient) => void | Promise<void>;
+export type OnConnectCallback = (clientSocket: ISocketClient, identity: IIdentity) => void | Promise<void>;
 
 /**
  * A callback executed when a specific message type is received.
