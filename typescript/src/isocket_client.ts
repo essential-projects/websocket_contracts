@@ -14,6 +14,16 @@ export interface ISocketClient {
   dispose(): void;
 
   /**
+   * Subscribes to the event that is emitted when the connected client
+   * disconnects.
+   *
+   * @param  {Function} callback    The callback that is executed when the
+   *                                client disconnects.
+   * @returns void
+   */
+  onDisconnect(callback: Function): void;
+
+  /**
    * Sends a message to the connected socket endpoint using the supplied event
    * type.
    *
