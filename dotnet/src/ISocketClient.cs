@@ -1,6 +1,7 @@
 namespace EssentialProjects.WebSocket.Contracts
 {
     using System;
+    using System.Threading;
 
     /// <summary>
     /// The socket client encapsulates the communication with a single connected
