@@ -1,4 +1,4 @@
-import { MessageCallback } from './callbacks';
+import { MessageCallback, OnConnectCallback } from './callbacks';
 
 /**
  * The socket client encapsulates the communication with a single connected
@@ -12,6 +12,15 @@ export interface ISocketClient {
    * @returns void
    */
   dispose(): void;
+
+  /**
+   * Executes the supplied callback each time a client connects to the socket
+   * endpoint.
+   *
+   * @param  {OnConnectCallback} callback
+   * @returns void
+   */
+  onConnect(callback: OnConnectCallback): void;
 
   /**
    * Subscribes to the event that is emitted when the connected client
