@@ -21,6 +21,17 @@ namespace EssentialProjects.WebSocket.Contracts
         /// </typeparam>
         void RegisterMessageType<TMessageType>(string eventType);
 
+        /// <summary>
+        /// Starts listening for messages on the configured connection.
+        /// </summary>
+        /// <param name="cancellationToken">
+        /// The CancellationToken used to stop listening.
+        /// </param>
+        /// <returns>
+        /// A task that is running while the client is listening for messages.
+        /// </returns>
+        Task StartListening(CancellationToken cancellationToken);
+
         // /// <summary>
         // /// Sends a message to the connected socket endpoint using the supplied
         // /// event type.
